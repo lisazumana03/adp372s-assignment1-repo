@@ -1,7 +1,9 @@
 package za.ac.cput.factory;
 
-public class BookingFactory {
-    if(){
+import za.ac.cput.domain.Booking;
 
+public class BookingFactory {
+    public static Booking createBooking(){
+        return null;
     }
 }
