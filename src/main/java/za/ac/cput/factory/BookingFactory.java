@@ -30,13 +30,23 @@ public class BookingFactory {
         if(booking == null){
             return null;
         }
-        return new Booking.Builder().setBookingID(booking.getBookingID()).setStatus(booking.getStatus()).build();
+        return new Booking.Builder()
+                .setBookingID(booking.getBookingID())
+                .setStatus("Booking has been cancelled")
+                .build();
     }
     public static Booking confirmBooking(Booking booking) {
         if(booking == null){
             return null;
         }
-        return new Booking.Builder().setBookingID(booking.getBookingID()).build();
+        return new Booking.Builder()
+                .setBookingID(booking.getBookingID())
+                .setUserID(booking.getUserID())
+                .setCarID(booking.getCarID())
+                .setStartDate(booking.getStartDate())
+                .setEndDate(booking.getEndDate())
+                .setStatus("Booking has been confirmed.")
+                .build();
     }
 
 }
