@@ -2,8 +2,35 @@ package za.ac.cput.factory;
 
 import za.ac.cput.domain.Booking;
 
+import java.util.Date;
+
 public class BookingFactory {
-    public static Booking createBooking(){
-        return null;
+    public static Booking createBooking(int bookingID, int userID, int carID, Date startDate, Date endDate, String status) {
+        if(bookingID<0||bookingID>100000){
+            return null;
+        }
+        else if(userID<0||userID>100000){
+            return null;
+        }
+        else if(carID<0||carID>100000){
+            return null;
+        }
+        else if(startDate==null||endDate==null){
+            return null;
+        }
+        else if(status==null){
+            return null;
+        }
+        else {
+            return new Booking.Builder().setBookingID(bookingID).setUserID(userID).setCarID(carID).setStartDate(startDate).setEndDate(endDate).setStatus(status).build();
+        }
     }
+
+    public static Booking cancelBooking(Booking booking) {
+        if(booking == null){
+            return null;
+        }
+        return booking;
+    }
+
 }
