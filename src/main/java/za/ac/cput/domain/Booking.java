@@ -6,7 +6,6 @@ package za.ac.cput.domain;
  * */
 
 import java.util.Date;
-import java.util.Locale;
 
 public class Booking {
     protected int bookingID;
