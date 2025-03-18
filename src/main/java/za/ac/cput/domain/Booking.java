@@ -1,4 +1,4 @@
-package za.ac.cput.entity;
+package za.ac.cput.domain;
 
 public class Booking {
     protected int booking_id;
