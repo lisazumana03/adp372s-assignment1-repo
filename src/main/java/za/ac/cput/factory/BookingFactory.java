@@ -30,7 +30,13 @@ public class BookingFactory {
         if(booking == null){
             return null;
         }
-        return booking;
+        return new Booking.Builder().setBookingID(booking.getBookingID()).setStatus(booking.getStatus()).build();
+    }
+    public static Booking confirmBooking(Booking booking) {
+        if(booking == null){
+            return null;
+        }
+        return new Booking.Builder().setBookingID(booking.getBookingID()).build();
     }
 
 }
