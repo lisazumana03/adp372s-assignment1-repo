@@ -1,9 +1,5 @@
 package za.ac.cput.factory;
 
-
-public class ReviewFactory {
-    package za.ac.cput.factory;
-
 import za.ac.cput.domain.Review;
 
     public class ReviewFactory {
@@ -29,4 +25,4 @@ import za.ac.cput.domain.Review;
         }
     }
 
-}
+
