@@ -1,7 +1,11 @@
 package za.ac.cput.domain;
 
+/*
+ * Lisakhanya Zumana (230864821)
+ * Date: 18/03/2025
+ * */
+
 import java.util.Date;
-import java.util.Locale;
 
 public class Booking {
     protected int bookingID;
