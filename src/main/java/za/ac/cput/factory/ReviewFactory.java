@@ -13,7 +13,7 @@ import za.ac.cput.domain.Review;
             else if(carID<0 || carID>1000000){
                 return null;
             }
-            else if(rating<0 || reviewID>5){
+            else if(rating<0 || rating>5){
                 return null;
             }
             else if(comment.isEmpty() || comment==null){
