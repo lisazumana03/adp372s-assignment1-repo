@@ -44,13 +44,8 @@ public class BookingRepositoryImpl implements BookingRepository {
     }
 
     @Override
-    public void delete(Integer integer) {
-        bookings.remove(integer);
+    public void delete(Integer bookingID) {
+        bookings.remove(bookingID);
     }
-
-//    @Override
-//        public void delete(Booking booking) {
-//            bookings.remove(booking.getBookingID());
-//        }
 
 }
