@@ -9,10 +9,10 @@ import java.util.List;
 public class BookingRepositoryImpl implements BookingRepository {
 
     private static BookingRepositoryImpl repo = null;
-    private HashMap<Integer, Booking> bookings = new HashMap<>();
+    private HashMap<Integer, Booking> bookingDB = new HashMap<>();
 
     private BookingRepositoryImpl() {
-        this.bookings = new HashMap<>();
+        this.bookingDB = new HashMap<>();
     }
 
         public static BookingRepository getRepository() {
@@ -42,6 +42,6 @@ public class BookingRepositoryImpl implements BookingRepository {
 
         @Override
         public void delete(Booking booking) {
-            bookings.remove(booking.getBookingID());
+            bookingDB.remove(booking.getBookingID());
         }
 }
