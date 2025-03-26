@@ -32,17 +32,16 @@ public class BookingRepositoryImpl implements BookingRepository {
         }
         bookings.put(booking.getBookingID(), booking);
             return booking;
-        }
+    }
+    @Override
+    public Booking read(Integer bookingID) {
+        return bookings.get(bookingID);
+    }
 
-        @Override
-        public Booking read(Integer bookingID) {
-            return bookings.get(bookingID);
-        }
-
-        @Override
-        public Booking update(Booking booking) {
-            return null;
-        }
+    @Override
+    public Booking update(Booking booking) {
+        return null;
+    }
 
     @Override
     public void delete(Integer integer) {
