@@ -40,7 +40,11 @@ public class BookingRepositoryImpl implements BookingRepository {
 
     @Override
     public Booking update(Booking booking) {
-        return null;
+        if(booking == null || bookings.containsKey(booking.getBookingID())) {
+            return null;
+        }
+        bookings.put(booking.getBookingID(), booking);
+        return booking;
     }
 
     @Override
