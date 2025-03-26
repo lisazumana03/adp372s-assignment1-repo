@@ -34,7 +34,7 @@ public class BookingRepositoryImpl implements BookingRepository {
         }
 
         @Override
-        public Booking read(Integer integer) {
+        public Booking read(Booking booking) {
             return null;
         }
 
