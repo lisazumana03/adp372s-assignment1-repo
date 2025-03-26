@@ -15,27 +15,28 @@ public class BookingRepositoryImpl implements BookingRepository {
         this.bookings = new HashMap<>();
     }
 
-        public static BookingRepository getRepository() {
-            if (repo == null) repo = new BookingRepositoryImpl();
-            return repo;
-        }
+    public static BookingRepository getRepository() {
+        if (repo == null) repo = new BookingRepositoryImpl();
+        return repo;
+    }
 
-        public List<Booking> findAll() {
-            List<Booking> bookings = new ArrayList<>();
-            return List.of();
-        }
+    public List<Booking> getAll() {
+        List<Booking> bookings = new ArrayList<>();
+        return List.of();
+    }
 
-        @Override
-        public Booking create(Booking booking) {
-            if(booking == null ){
-                return null;
-            }
+    @Override
+    public Booking create(Booking booking) {
+        if(booking == null || bookings.containsKey(booking.getBookingID())) {
+            return null;
+        }
+        bookings.put(booking.getBookingID(), booking);
             return booking;
         }
 
         @Override
-        public Booking read(Booking booking) {
-            return null;
+        public Booking read(Integer bookingID) {
+            return bookings.get(bookingID);
         }
 
         @Override
@@ -43,8 +44,14 @@ public class BookingRepositoryImpl implements BookingRepository {
             return null;
         }
 
-        @Override
-        public void delete(Booking booking) {
-            bookings.remove(booking.getBookingID());
-        }
+    @Override
+    public void delete(Integer integer) {
+        bookings.remove(integer);
+    }
+
+//    @Override
+//        public void delete(Booking booking) {
+//            bookings.remove(booking.getBookingID());
+//        }
+
 }
