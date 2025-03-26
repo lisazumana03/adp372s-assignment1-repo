@@ -1,6 +1,7 @@
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.Test;
+import za.ac.cput.domain.Booking;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,8 +9,7 @@ class BookingFactoryTest {
 
     @Test
     void createBooking() {
-        BookingFactory bookingFactory = new BookingFactory();
-        assertNotNull(bookingFactory);
+        Booking booking = BookingFactory.createBooking(34,030, 245, );
     }
 
     @Test
