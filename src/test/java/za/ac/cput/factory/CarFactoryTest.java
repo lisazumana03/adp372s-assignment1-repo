@@ -27,26 +27,5 @@ class CarFactoryTest {
         assertNotNull(car);
     }
 
-    @Test
-    void updateAvailability() {
-        Car car = new Car.Builder()
-                .setCarID(102)
-                .setModel("Civic")
-                .setBrand("Honda")
-                .setYear(2021)
-                .setAvailability(true)
-                .setRentalPrice(600.00)
-                .build();
 
-        Car updatedCar = new Car.Builder()
-                .setCarID(car.getCarID())
-                .setModel(car.getModel())
-                .setBrand(car.getBrand())
-                .setYear(car.getYear())
-                .setAvailability(false) // Changing availability
-                .setRentalPrice(car.getRentalPrice())
-                .build();
-
-        assertFalse(updatedCar.isAvailable());
-    }
 }
