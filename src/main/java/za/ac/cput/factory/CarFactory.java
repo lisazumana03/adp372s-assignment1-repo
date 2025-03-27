@@ -35,17 +35,5 @@ public class CarFactory {
                 .build();
     }
 
-    public static Car updateAvailability(Car car, boolean availability) {
-        if (car == null) {
-            return null;
-        }
-        return new Car.Builder()
-                .setCarID(car.getCarID())
-                .setModel(car.getModel())
-                .setBrand(car.getBrand())
-                .setYear(car.getYear())
-                .setAvailability(availability)
-                .setRentalPrice(car.getRentalPrice())
-                .build();
-    }
+
 }
