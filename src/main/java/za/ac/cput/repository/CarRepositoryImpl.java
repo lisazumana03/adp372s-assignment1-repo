@@ -31,8 +31,8 @@ public class CarRepositoryImpl implements CarRepository {
     }
 
     @Override
-    public Car read(Integer id) {
-        return carDB.get(id);
+    public Car read(Integer carID) {
+        return carDB.get(carID);
     }
 
     @Override
@@ -45,8 +45,8 @@ public class CarRepositoryImpl implements CarRepository {
     }
 
     @Override
-    public void delete(Car car) {
-        carDB.remove(car.getCarID());
+    public void delete(Integer carID) {
+        carDB.remove(carID);
     }
 
     public Car updateAvailability(int carID, boolean availability) {

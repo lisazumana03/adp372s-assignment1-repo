@@ -1,16 +1,24 @@
 package za.ac.cput.factory;
 
-import za.ac.cput.domain.Booking;
-
 /*
-* Lisakhanya Zumana (230864821)
-* Date: 18/03/2025
-* */
+ * Lisakhanya Zumana (230864821)
+ * Date: 18/03/2025
+ * */
 
+import za.ac.cput.domain.Booking;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class BookingFactory {
+
+    private static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("YYYY-MM-DD");
+
     public static Booking createBooking(int bookingID, int userID, int carID, Date startDate, Date endDate, String status) {
+
+        Date start = convertToDate(startDate);
+        Date end = convertToDate(endDate);
+
         if(bookingID<0||bookingID>100000){
             return null;
         }
@@ -46,12 +54,15 @@ public class BookingFactory {
         }
         return new Booking.Builder()
                 .setBookingID(booking.getBookingID())
-                .setUserID(booking.getUserID())
-                .setCarID(booking.getCarID())
-                .setStartDate(booking.getStartDate())
-                .setEndDate(booking.getEndDate())
                 .setStatus("Booking has been confirmed.")
                 .build();
+    }
+
+    private static Date convertToDate(Date date) {
+        if(date == null){
+            return null;
+        }
+        return new Date(date.getTime());
     }
 
 }

@@ -1,7 +1,7 @@
 package za.ac.cput.domain;
 
 /*
- * Lisakhanya Zumana (230864821)
+ * Author: Lisakhanya Zumana (230864821)
  * Date: 18/03/2025
  * */
 

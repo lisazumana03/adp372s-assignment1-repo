@@ -1,8 +1,10 @@
 package za.ac.cput.repository;
 
-public interface IRepository <T, id>{
-    T create(id id);
-    T read(id id);
+import za.ac.cput.domain.Booking;
+
+public interface IRepository <T, ID>{
+    T create(T t);
+    T read(ID id);
     T update(T t);
-    void delete(T t);
+    void delete(ID id);
 }
