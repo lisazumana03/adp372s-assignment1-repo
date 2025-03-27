@@ -16,7 +16,7 @@ public class BookingFactory {
 
     public static Booking createBooking(int bookingID, int userID, int carID, Date startDate, Date endDate, String status) {
 
-        Date start = convertToData(startDate);
+        Date start = convertToDate(startDate);
         Date end = convertToDate(endDate);
 
         if(bookingID<0||bookingID>100000){
