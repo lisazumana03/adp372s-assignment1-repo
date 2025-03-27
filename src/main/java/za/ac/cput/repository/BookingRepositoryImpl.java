@@ -14,25 +14,21 @@ import java.util.List;
 public class BookingRepositoryImpl implements BookingRepository {
 
     private static BookingRepositoryImpl repo = null;
-    private HashMap<Integer, Booking> bookings = new HashMap<>();
+    private HashMap<Integer, Booking> bookings;
 
     private BookingRepositoryImpl() {
         this.bookings = new HashMap<>();
     }
 
     public static BookingRepository getRepository() {
-        if (repo == null) repo = new BookingRepositoryImpl();
+        if (repo == null)
+            repo = new BookingRepositoryImpl();
         return repo;
-    }
-
-    public List<Booking> getAll() {
-        List<Booking> bookings = new ArrayList<>();
-        return List.of();
     }
 
     @Override
     public Booking create(Booking booking) {
-        if(booking == null || bookings.containsKey(booking.getBookingID())) {
+        if(booking == null || !bookings.containsKey(booking.getBookingID())) {
             return null;
         }
         bookings.put(booking.getBookingID(), booking);
@@ -45,7 +41,7 @@ public class BookingRepositoryImpl implements BookingRepository {
 
     @Override
     public Booking update(Booking booking) {
-        if(booking == null || bookings.containsKey(booking.getBookingID())) {
+        if(booking == null || !bookings.containsKey(booking.getBookingID())) {
             return null;
         }
         bookings.put(booking.getBookingID(), booking);

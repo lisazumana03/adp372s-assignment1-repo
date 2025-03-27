@@ -12,7 +12,14 @@ import java.util.Date;
 
 public class BookingFactory {
 
-    private static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("YYYY-MM-DD");
+    private static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+
+    private static Date convertToDate(Date date) {
+        if(date == null){
+            return null;
+        }
+        return new Date(date.getTime());
+    }
 
     public static Booking createBooking(int bookingID, int userID, int carID, Date startDate, Date endDate, String status) {
 
@@ -31,7 +38,7 @@ public class BookingFactory {
         else if(startDate==null||endDate==null){
             return null;
         }
-        else if(status==null){
+        else if(status==null || status.isEmpty()){
             return null;
         }
         else {
@@ -40,29 +47,20 @@ public class BookingFactory {
     }
 
     public static Booking cancelBooking(Booking booking) {
-        if(booking == null){
-            return null;
-        }
         return new Booking.Builder()
                 .setBookingID(booking.getBookingID())
-                .setStatus("Booking has been cancelled")
+                .setUserID(booking.getUserID())
+                .setCarID(booking.getCarID())
+                .setStatus("Booking has been cancelled.")
                 .build();
     }
     public static Booking confirmBooking(Booking booking) {
-        if(booking == null){
-            return null;
-        }
         return new Booking.Builder()
                 .setBookingID(booking.getBookingID())
+                .setUserID(booking.getUserID())
+                .setCarID(booking.getCarID())
                 .setStatus("Booking has been confirmed.")
                 .build();
-    }
-
-    private static Date convertToDate(Date date) {
-        if(date == null){
-            return null;
-        }
-        return new Date(date.getTime());
     }
 
 }
