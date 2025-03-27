@@ -49,13 +49,4 @@ public class CarRepositoryImpl implements CarRepository {
         carDB.remove(carID);
     }
 
-    public Car updateAvailability(int carID, boolean availability) {
-        Car car = carDB.get(carID);
-        if (car != null) {
-            Car updatedCar = CarFactory.updateAvailability(car, availability);
-            carDB.put(carID, updatedCar);
-            return updatedCar;
-        }
-        return null;
-    }
 }
