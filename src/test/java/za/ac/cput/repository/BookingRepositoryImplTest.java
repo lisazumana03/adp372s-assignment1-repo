@@ -6,6 +6,10 @@ Date 26/03/2025
  */
 
 import org.junit.jupiter.api.*;
+import za.ac.cput.domain.Booking;
+import za.ac.cput.factory.BookingFactory;
+
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BookingRepositoryImplTest {
 
     private static BookingRepository bookingRepository = new BookingRepositoryImpl();
-    private static Bookin;
+    private static Booking booking = BookingFactory.createBooking(34, 230, 245, 2025-3-12, 2028-3-12, "Booking approved! Congratulations!");
 
     @Test
     void getRepository() {

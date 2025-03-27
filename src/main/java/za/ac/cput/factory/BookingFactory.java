@@ -54,10 +54,6 @@ public class BookingFactory {
         }
         return new Booking.Builder()
                 .setBookingID(booking.getBookingID())
-                .setUserID(booking.getUserID())
-                .setCarID(booking.getCarID())
-                .setStartDate(booking.getStartDate())
-                .setEndDate(booking.getEndDate())
                 .setStatus("Booking has been confirmed.")
                 .build();
     }

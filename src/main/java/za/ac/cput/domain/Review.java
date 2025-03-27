@@ -74,5 +74,9 @@ public class Review {
             this.comment = comment;
             return this;
         }
+
+        public Review build() {
+            return new Review(this);
+        }
     }
 }

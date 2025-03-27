@@ -16,12 +16,18 @@ class BookingFactoryTest {
         Date endDate = new Date(2028-3-13);
 
         Booking booking = BookingFactory.createBooking(34,030, 245, startDate, endDate, "Booking approved! Congratulations!");
+        assertEquals(34, booking.getBookingID());
+        assertEquals(030, booking.getUserID());
+        assertEquals(245, booking.getCarID());
+        assertEquals(2025-3-12, booking.getStartDate());
+        assertEquals(2028-3-13, booking.getEndDate());
+        assertEquals("Booking approved! Congratulations!", booking.toString());
+        assertNotNull(booking);
     }
 
     @Test
     void cancelBooking() {
-        BookingFactory bookingFactory = new BookingFactory();
-        assertNotNull(bookingFactory);
+        Booking booking = BookingFactory.cancelBooking(32, 034, 245, 2026-3-12);
     }
 
     @Test
