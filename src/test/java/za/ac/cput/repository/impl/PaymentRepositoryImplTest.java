@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 /*
  * Author: Sanele Zondi (221602011)
@@ -8,13 +8,14 @@ package za.ac.cput.repository;
 import org.junit.jupiter.api.*;
 import za.ac.cput.domain.Payment;
 import za.ac.cput.factory.PaymentFactory;
+import za.ac.cput.repository.PaymentRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class PaymentRepositoryImplTest {
 
-    private static PaymentRepository repository = new PaymentRepositoryImpl();
+    private static PaymentRepository repository;
     private static Payment payment = PaymentFactory.createPayment(1001, "BKG12345", 2500.75, "Credit Card");
 
     @Test

@@ -3,7 +3,6 @@ package za.ac.cput.repository.impl;
 //Author: Bonga Velem (220052379)
 //Date: 27 March 2025
 import za.ac.cput.domain.User;
-import za.ac.cput.repository.UserRepository;
 
 import java.util.HashMap;
 import java.util.List;
@@ -51,8 +50,8 @@ public class UserRepositoryImpl implements UserRepository {
 
 
     @Override
-    public void delete(User user) {
-        userDB.remove(user.getUserId());
+        public void delete(Integer userID) {
+        userDB.remove(userID);
 
     }
 

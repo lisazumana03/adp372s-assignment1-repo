@@ -9,6 +9,7 @@ import za.ac.cput.domain.Booking;
 import za.ac.cput.repository.BookingRepository;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class BookingRepositoryImpl implements BookingRepository {
 
@@ -23,6 +24,11 @@ public class BookingRepositoryImpl implements BookingRepository {
         if (repo == null)
             repo = new BookingRepositoryImpl();
         return repo;
+    }
+
+    @Override
+    public List<Booking> getAll() {
+        return List.of();
     }
 
     @Override
