@@ -49,8 +49,6 @@ public class BookingFactory {
     public static Booking cancelBooking(Booking booking) {
         return new Booking.Builder()
                 .setBookingID(booking.getBookingID())
-                .setUserID(booking.getUserID())
-                .setCarID(booking.getCarID())
                 .setStatus("Booking has been cancelled.")
                 .build();
     }

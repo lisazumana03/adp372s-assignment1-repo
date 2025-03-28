@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 /*
 * Author: Lisakhanya Zumana (230864821)
@@ -6,10 +6,9 @@ package za.ac.cput.repository;
 * */
 
 import za.ac.cput.domain.Booking;
+import za.ac.cput.repository.BookingRepository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class BookingRepositoryImpl implements BookingRepository {
 
@@ -28,7 +27,7 @@ public class BookingRepositoryImpl implements BookingRepository {
 
     @Override
     public Booking create(Booking booking) {
-        if(booking == null || !bookings.containsKey(booking.getBookingID())) {
+        if(booking == null || bookings.containsKey(booking.getBookingID())) {
             return null;
         }
         bookings.put(booking.getBookingID(), booking);

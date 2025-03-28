@@ -48,8 +48,6 @@ class BookingFactoryTest {
 
         Booking bookingCancelled = BookingFactory.cancelBooking(booking);
         assertEquals(32, booking.getBookingID());
-        assertEquals(345, booking.getUserID());
-        assertEquals(444, booking.getCarID());
         assertEquals("Booking has been cancelled.", bookingCancelled.getStatus());
         assertNotNull(bookingCancelled);
     }

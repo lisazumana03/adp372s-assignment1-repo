@@ -8,6 +8,7 @@ Date 26/03/2025
 import org.junit.jupiter.api.*;
 import za.ac.cput.domain.Booking;
 import za.ac.cput.factory.BookingFactory;
+import za.ac.cput.repository.impl.BookingRepositoryImpl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -43,6 +44,7 @@ class BookingRepositoryImplTest {
 
         Booking newBooking = BookingFactory.createBooking(34, 730, 245, startDate, endDate, "Booking created!");
         Booking bookingCreated = bookingRepository.create(newBooking);
+        
         assertNotNull(bookingCreated);
         assertEquals(34, bookingCreated.getBookingID());
         assertEquals(730, bookingCreated.getUserID());
@@ -55,6 +57,9 @@ class BookingRepositoryImplTest {
     @Test
     @Order(2)
     void read() {
+        Booking read = bookingRepository.read(booking.getBookingID());
+        assertNotNull(read);
+        assertEquals(booking.getBookingID(), read.getBookingID());
     }
 
     @Test

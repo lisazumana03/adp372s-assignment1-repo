@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Car;
 import za.ac.cput.factory.CarFactory;
+import za.ac.cput.repository.impl.CarRepositoryImpl;
 
 import static org.junit.jupiter.api.Assertions.*;
 //Imtiyaaz Waggie 219374759 27/03/2025//
