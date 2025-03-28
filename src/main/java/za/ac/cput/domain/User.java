@@ -8,6 +8,7 @@ public class User {
     private int userId;
     private String name;
     private String email;
+    private String password;
     private String phoneNumber;
     private String licenseNumber;
 
@@ -15,6 +16,7 @@ public class User {
         this.userId = builder.userId;
         this.name = builder.name;
         this.email = builder.email;
+        this.password =
         this.phoneNumber = builder.phoneNumber;
         this.licenseNumber = builder.licenseNumber;
     }
@@ -29,6 +31,9 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+    public String getPassword() {
+        return password;
     }
 
     public String getPhoneNumber() {
@@ -45,15 +50,18 @@ public class User {
                 "userId=" + userId +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", licenseNumber='" + licenseNumber + '\'' +
                 '}';
     }
 
+
     public static class Builder{
         private int userId;
         private String name;
         private String email;
+        private String password;
         private String phoneNumber;
         private String licenseNumber;
 
@@ -71,6 +79,10 @@ public class User {
             this.email = email;
             return this;
         }
+        public Builder setPassword(String password) {
+            this.password = password;
+            return this;
+        }
 
         public Builder setPhoneNumber(String phoneNumber) {
             this.phoneNumber = phoneNumber;
@@ -86,6 +98,7 @@ public class User {
             this.userId = user.userId;
             this.name = user.name;
             this.email = user.email;
+            this.password = user.password;
             this.phoneNumber = user.phoneNumber;
             this.licenseNumber = user.licenseNumber;
             return this;

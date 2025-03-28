@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserRepositoryImplTest {
-    private static UserRepositoryImpl repository ;
+    private static UserRepositoryImpl repository;
     private static User user;
 
 
